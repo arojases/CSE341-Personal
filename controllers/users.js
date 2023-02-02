@@ -10,7 +10,13 @@ const getItem = async (req, res) => {
 };
 
 //Get detail
-const getItemId = (req, res) => {};
+const getItemId = async (req, res) => {
+
+    const { id } = req;
+    const data = await userModel.findOne(id);
+
+    res.send({data});
+};
 
 //Insert 
 const createItem = async (req, res) => {
