@@ -15,6 +15,6 @@ fs.readdirSync(PATH_ROUTES).filter((file) => {
   }
 });
 
-//router.use('/', require('./swagger.js'));
+router.use('/', require('./swagger.js'));
 
 module.exports = router;
