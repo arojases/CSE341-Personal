@@ -33,7 +33,14 @@ res.send({data})
 const updateTicket = (req, res) => {};
 
 //Delete
-const deleteTicket = (req, res) => {};
+const deleteTicket = async (req, res) => {
+
+    const  id  = req.params.id;
+    const data = await ticketmodel.deleteOne({_id:id});
+
+    res.send({data});
+    
+};
 
 module.exports = {
     getTicket,
