@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
         unique: true
     },
     birthday: {
-        type: String
+        type: Date
     },
     password: {
         type: String

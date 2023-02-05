@@ -1,6 +1,6 @@
 const models = {
-    userModel: require("./users")
-    //ticketModel: require("./ticket")
+    userModel: require("./users"),
+    ticketmodel: require("./tickets")
 }
 
 module.exports = models
