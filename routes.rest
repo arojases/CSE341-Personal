@@ -14,7 +14,7 @@ Content-Type: application/json
 {
     "firstName": "Ariel", 
     "lastName": "Rojas", 
-    "email": "ariel@test.com", 
+    "email": "test@test.com", 
     "birthday": "10/20/1990",
     "password": "admin",
     "phone": 351876,
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE http://localhost:3000/users/63df19454e821fc32245ff7b HTTP/1.1
+DELETE http://localhost:3000/users/63df36a444efd26a70d8731f HTTP/1.1
 
 //////////////////////////////RENDER USER////////////////////////////////
 
@@ -47,7 +47,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE https://cse341-personal-z0hp.onrender.com/users/63df30b486b8d8cde0b23307 HTTP/1.1
+DELETE https://cse341-personal-z0hp.onrender.com/users/63df33ab86b8d8cde0b23320 HTTP/1.1
 
 
 //////////////////////////////LOCALHOST TICKETS////////////////////////////////
@@ -70,7 +70,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE http://localhost:3000/tickets/63df30e760d8c04fc914af82
+DELETE http://localhost:3000/tickets/63df372d77367fb98586a826
 
 //////////////////////////////RENDER TICKETS////////////////////////////////
 
@@ -92,4 +92,4 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE https://cse341-personal-z0hp.onrender.com/tickets/63df31a286b8d8cde0b2330e
+DELETE https://cse341-personal-z0hp.onrender.com/tickets/63df373d037f741e4ece5715

@@ -25,8 +25,11 @@ const createItem = async (req, res) => {
     const { body } = req
     //console.log(body)
 
-    const data = await userModel.create(body)
-    res.send({data})
+    const data = await userModel.create(body).then((data) => {
+        console.log(data);
+        res.status(201).send(data);
+    });
+    //res.send({data})
 
 };
 
