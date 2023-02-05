@@ -1,4 +1,5 @@
 const { userModel } = require("../models")
+const {  ObjectId } = require("../connection/db");
 
 //Get list
 const getItem = async (req, res) => {
@@ -12,8 +13,8 @@ const getItem = async (req, res) => {
 //Get detail
 const getItemId = async (req, res) => {
 
-    const { id } = req;
-    const data = await userModel.findOne(id);
+    const  id  = req.params.id;
+    const data = await userModel.findOne({_id:id});
 
     res.send({data});
 };
@@ -21,19 +22,36 @@ const getItemId = async (req, res) => {
 //Insert 
 const createItem = async (req, res) => {
 
-const { body } = req
-console.log(body)
+    const { body } = req
+    //console.log(body)
 
-const data = await userModel.create(body)
-res.send({data})
+    const data = await userModel.create(body)
+    res.send({data})
 
 };
 
 //Update
-const updateItem = (req, res) => {};
+const updateItem = async (req, res) => {
+
+
+    //const { body } = req
+    //console.log(body)
+    const { id } = req;
+
+    const data = await userModel.findByIdAndUpdate(id)
+    res.send({data})
+
+};
 
 //Delete
-const deleteItem = (req, res) => {};
+const deleteItem = async (req, res) => {
+
+    const  id  = req.params.id;
+    const data = await userModel.deleteOne({_id:id});
+
+    res.send({data});
+
+};
 
 module.exports = {
     getItem,

@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Simple API",
-        "description": "Contacts API",
+        "title": "Personal API",
+        "description": "API ticket sells",
         "version": "1.0.0"
     },
     "host": "cse341-personal-z0hp.onrender.com",
@@ -10,16 +10,19 @@
     "schemes": [
         "https"
     ],
-    "paths": {
-        "/api-docs": {
-            "get": {
-                "description": "",
-                "parameters": [],
-                "responses": {}
-            }
+    "tags": [{
+            "name": "User",
+            "description": "Operations about Users"
         },
+        {
+            "name": "Ticket",
+            "description": "Operations about Tickets"
+        }
+    ],
+    "paths": {
         "/users/": {
             "get": {
+                "tags": ["User"],
                 "description": "",
                 "produces": [
                     "application/json"
@@ -31,28 +34,78 @@
                     }
                 }
             },
-
-            "/contacts/{id}": {
-                "get": {
-                    "description": "",
-                    "produces": [
-                        "application/json"
-                    ],
-                    "parameters": [{
+            "post": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "firstName": {
+                                "example": "any"
+                            },
+                            "lastName": {
+                                "example": "any"
+                            },
+                            "email": {
+                                "example": "any"
+                            },
+                            "birthday": {
+                                "example": "any"
+                            },
+                            "password": {
+                                "example": "any"
+                            },
+                            "phone": {
+                                "example": "any"
+                            },
+                            "address": {
+                                "example": "any"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [{
                         "name": "id",
                         "in": "path",
                         "required": true,
                         "type": "string"
-                    }],
-                    "responses": {
-                        "200": {
-                            "description": "OK"
-                        }
-                    }
-                },
-                "post": {
-                    "description": "",
-                    "parameters": [{
+                    },
+                    {
                         "name": "body",
                         "in": "body",
                         "schema": {
@@ -81,48 +134,6 @@
                                 }
                             }
                         }
-                    }],
-                    "responses": {
-                        "201": {
-                            "description": "Created"
-                        },
-                        "500": {
-                            "description": "Internal Server Error"
-                        }
-                    }
-                }
-            },
-            "put": {
-                "description": "",
-                "parameters": [{
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "firstName": {
-                                    "example": "any"
-                                },
-                                "lastName": {
-                                    "example": "any"
-                                },
-                                "email": {
-                                    "example": "any"
-                                },
-                                "favoriteColor": {
-                                    "example": "any"
-                                },
-                                "birthday": {
-                                    "example": "any"
-                                }
-                            }
-                        }
                     }
                 ],
                 "responses": {
@@ -135,6 +146,7 @@
                 }
             },
             "delete": {
+                "tags": ["User"],
                 "description": "",
                 "parameters": [{
                     "name": "id",
@@ -150,6 +162,77 @@
                         "description": "Internal Server Error"
                     }
                 }
+            }
+        },
+        "/tickets/": {
+
+            "get": {
+                "tags": ["Ticket"],
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Ticket"],
+                "description": "",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "origin": {
+                                "example": "any"
+                            },
+                            "destination": {
+                                "example": "any"
+                            },
+                            "departure": {
+                                "example": "any"
+                            },
+                            "return": {
+                                "example": "any"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+
+        },
+        "/tickets/{id}": {
+            "get": {
+                "tags": ["Ticket"],
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+
             }
         }
     }

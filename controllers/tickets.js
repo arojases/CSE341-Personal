@@ -12,8 +12,8 @@ const getTicket = async (req, res) => {
 //Get detail
 const getTicketId = async (req, res) => {
 
-    const { id } = req;
-    const data = await ticketmodel.findOne(id);
+    const  id  = req.params.id;
+    const data = await ticketmodel.findOne({_id:id});
 
     res.send({data});
 };

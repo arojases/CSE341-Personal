@@ -1,7 +1,9 @@
 GET http://localhost:3000/users HTTP/1.1
 
 ###ID
-GET http://localhost:3000/users/63db5be6834d15ceff3e80c6 HTTP/1.1
+GET http://localhost:3000/users/63df1a5fa1246b891f2a79c1 HTTP/1.1
+###
+GET http://localhost:3000/users/63df19644e821fc32245ff80 HTTP/1.1
 
 ###Post
 POST http://localhost:3000/users HTTP/1.1
@@ -10,12 +12,16 @@ Content-Type: application/json
 {
     "firstName": "Ariel", 
     "lastName": "Rojas", 
-    "email": "ar@test.com", 
+    "email": "ariel@test.com", 
     "birthday": "10/20/1990",
     "password": "admin",
     "phone": 351876,
     "address": "205 N 500 W"
 }
+
+###DELETE
+DELETE http://localhost:3000/users/63df19454e821fc32245ff7b HTTP/1.1
+
 
 //TICKETS
 
@@ -23,14 +29,14 @@ Content-Type: application/json
 GET http://localhost:3000/tickets HTTP/1.1
 
 ###ID
-GET http://localhost:3000/tickets/63defb9d19fb5b2f9394f122 HTTP/1.1
+GET http://localhost:3000/tickets/63df25e2a07cd0e0af7e0a17 HTTP/1.1
 
 ###Post
 POST http://localhost:3000/tickets HTTP/1.1
 Content-Type: application/json
 
 {
-    "origin": "USA", 
+    "origin": "Japan", 
     "destination": "Chile", 
     "departure": "10/21/2023", 
     "return": "10/31/2023"
