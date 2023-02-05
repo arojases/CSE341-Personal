@@ -1,6 +1,6 @@
 //////////////////////////////LOCALHOST USER////////////////////////////////
 
-GET http://localhost:3000/users HTTP/1.1
+GET http://localhost:8080/users HTTP/1.1
 
 ###ID
 GET http://localhost:3000/users/63df1a5fa1246b891f2a79c1 HTTP/1.1
