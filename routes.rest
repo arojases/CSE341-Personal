@@ -3,12 +3,12 @@
 GET http://localhost:8080/users HTTP/1.1
 
 ###ID
-GET http://localhost:3000/users/63df1a5fa1246b891f2a79c1 HTTP/1.1
+GET http://localhost:8080/users/63df1a5fa1246b891f2a79c1 HTTP/1.1
 ###
-GET http://localhost:3000/users/63df19644e821fc32245ff80 HTTP/1.1
+GET http://localhost:8080/users/63df19644e821fc32245ff80 HTTP/1.1
 
 ###Post
-POST http://localhost:3000/users HTTP/1.1
+POST http://localhost:8080/users HTTP/1.1
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE http://localhost:3000/users/63df36a444efd26a70d8731f HTTP/1.1
+DELETE http://localhost:8080/users/63df36a444efd26a70d8731f HTTP/1.1
 
 //////////////////////////////RENDER USER////////////////////////////////
 
@@ -53,13 +53,13 @@ DELETE https://cse341-personal-z0hp.onrender.com/users/63df33ab86b8d8cde0b23320 
 //////////////////////////////LOCALHOST TICKETS////////////////////////////////
 
 ###
-GET http://localhost:3000/tickets HTTP/1.1
+GET http://localhost:8080/tickets HTTP/1.1
 
 ###ID
-GET http://localhost:3000/tickets/63df25e2a07cd0e0af7e0a17 HTTP/1.1
+GET http://localhost:8080/tickets/63df25e2a07cd0e0af7e0a17 HTTP/1.1
 
 ###Post
-POST http://localhost:3000/tickets HTTP/1.1
+POST http://localhost:8080/tickets HTTP/1.1
 Content-Type: application/json
 
 {
@@ -70,7 +70,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE http://localhost:3000/tickets/63df372d77367fb98586a826
+DELETE http://localhost:8080/tickets/63df372d77367fb98586a826
 
 //////////////////////////////RENDER TICKETS////////////////////////////////
 
