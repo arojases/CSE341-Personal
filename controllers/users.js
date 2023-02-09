@@ -37,12 +37,14 @@ const createItem = async (req, res) => {
 const updateItem = async (req, res) => {
 
 
-    //const { body } = req
-    //console.log(body)
-    const { id } = req;
+    const { body } = req
+    const id = req.params.id;
 
-    const data = await userModel.findByIdAndUpdate(id)
-    res.send({data})
+    const data = await userModel.findByIdAndUpdate({_id:id}, body).then((data) => {
+        console.log(data);
+        res.status(204).send(data);
+    });
+    //res.send({data})
 
 };
 
@@ -52,7 +54,7 @@ const deleteItem = async (req, res) => {
     const  id  = req.params.id;
     const data = await userModel.deleteOne({_id:id});
 
-    res.send({data});
+    res.status(200).send({data});
 
 };
 
