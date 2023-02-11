@@ -33,12 +33,22 @@ const data = await ticketmodel.create(body).then((data) => {
 };
 
 //Update
-const updateTicket = (req, res) => {};
+const updateTicket = async (req, res) => {
+
+    const { body } = req
+    const id = req.params.id;
+
+    const data = await ticketmodel.findByIdAndUpdate({_id:id}, body).then((data) => {
+        console.log(data);
+        res.status(204).send(data);
+    });
+    //res.send({data})
+};
 
 //Delete
 const deleteTicket = async (req, res) => {
 
-    const  id  = req.params.id;
+    const id = req.params.id;
     const data = await ticketmodel.deleteOne({_id:id});
 
     res.send({data});

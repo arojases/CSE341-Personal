@@ -70,7 +70,7 @@ DELETE https://cse341-personal-z0hp.onrender.com/users/63df33ab86b8d8cde0b23320 
 GET http://localhost:8080/tickets HTTP/1.1
 
 ###ID
-GET http://localhost:8080/tickets/63df25e2a07cd0e0af7e0a17 HTTP/1.1
+GET http://localhost:8080/tickets/63df3f67f4aecc1900fc07ff HTTP/1.1
 
 ###Post
 POST http://localhost:8080/tickets HTTP/1.1
@@ -83,8 +83,19 @@ Content-Type: application/json
     "return": "10/31/2023"
 }
 
+###Put
+PUT http://localhost:8080/tickets/63e6e109adb0d2c4fd018512 HTTP/1.1
+Content-Type: application/json
+
+{
+    "origin": "Germany", 
+    "destination": "Chile", 
+    "departure": "10/21/2023", 
+    "return": "10/31/2023"
+}
+
 ###DELETE
-DELETE http://localhost:8080/tickets/63df372d77367fb98586a826
+DELETE http://localhost:8080/tickets/63df3acb037f741e4ece5732
 
 //////////////////////////////RENDER TICKETS////////////////////////////////
 
