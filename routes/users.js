@@ -7,8 +7,8 @@ const { getItem, getItemId, createItem, updateItem, deleteItem } = require("../c
 
 router.get("/", getItem);
 router.get("/:id", getItemId);
-router.post("/", validation.saveContact,  createItem);
-router.put("/:id", updateItem);
+router.post("/", validation.saveContact, createItem);
+router.put("/:id", validation.saveContact, updateItem);
 router.delete("/:id", deleteItem);
 
 

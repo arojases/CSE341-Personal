@@ -8,7 +8,7 @@ const { getTicket, getTicketId, createTicket, updateTicket, deleteTicket } = req
 router.get("/", getTicket);
 router.get("/:id", getTicketId);
 router.post("/", validation.saveTicket, createTicket);
-router.put("/:id", updateTicket);
+router.put("/:id", validation.saveTicket, updateTicket);
 router.delete("/:id", deleteTicket);
 
 

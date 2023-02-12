@@ -9,19 +9,22 @@ const getItem = async (req, res) => {
 
         res.send({data});        
     } catch (error) {
-        res.status(500).json({error: "A problem ocurred"})        
-    }
-
-   
+        res.status(500).json({error: "Error occurred while retrieving."})        
+    }   
 };
 
 //Get detail
 const getItemId = async (req, res) => {
 
-    const  id  = req.params.id;
-    const data = await userModel.findOne({_id:id});
+    try {
+        const  id  = req.params.id;
+        const data = await userModel.findOne({_id:id});
 
-    res.send({data});
+        res.send({data});
+        
+    } catch (error) {
+        res.status(500).json({error: "Error occurred while retrieving."})
+    }    
 };
 
 //Insert 
@@ -29,7 +32,6 @@ const createItem = async (req, res) => {
 
     try {
         const { body } = req
-        //console.log(body)
 
         const data = await userModel.create(body).then((data) => {
         console.log(data);
@@ -45,26 +47,32 @@ const createItem = async (req, res) => {
 //Update
 const updateItem = async (req, res) => {
 
-
-    const { body } = req
-    const id = req.params.id;
-
-    const data = await userModel.findByIdAndUpdate({_id:id}, body).then((data) => {
-        console.log(data);
-        res.status(204).send(data);
-    });
-    //res.send({data})
-
+    try {
+        const { body } = req
+        const id = req.params.id;
+    
+        const data = await userModel.findByIdAndUpdate({_id:id}, body).then((data) => {
+            console.log(data);
+            res.status(204).send(data);
+        });
+        
+    } catch (error) {
+        res.status(500).json({error: "The User wasn't updated"})
+    }
 };
 
 //Delete
 const deleteItem = async (req, res) => {
 
-    const  id  = req.params.id;
-    const data = await userModel.deleteOne({_id:id});
+    try {
+        const  id  = req.params.id;
+        const data = await userModel.deleteOne({_id:id});
 
-    res.status(200).send({data});
-
+        res.status(200).send({data});
+        
+    } catch (error) {
+        res.status(500).json({error: "The User wasn't deleted"})        
+    }
 };
 
 module.exports = {
