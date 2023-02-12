@@ -1,5 +1,4 @@
 const { userModel } = require("../models")
-//const { ObjectId } = require("../connection/db");
 
 //Get list
 const getItem = async (req, res) => {
