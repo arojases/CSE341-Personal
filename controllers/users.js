@@ -1,13 +1,18 @@
 const { userModel } = require("../models")
-const {  ObjectId } = require("../connection/db");
+//const { ObjectId } = require("../connection/db");
 
 //Get list
 const getItem = async (req, res) => {
 
-    const data = await userModel.find({});
+    try {
+        const data = await userModel.find({});
 
-    res.send({data});
+        res.send({data});        
+    } catch (error) {
+        res.status(500).json({error: "A problem ocurred"})        
+    }
 
+   
 };
 
 //Get detail
@@ -22,15 +27,19 @@ const getItemId = async (req, res) => {
 //Insert 
 const createItem = async (req, res) => {
 
-    const { body } = req
-    //console.log(body)
+    try {
+        const { body } = req
+        //console.log(body)
 
-    const data = await userModel.create(body).then((data) => {
+        const data = await userModel.create(body).then((data) => {
         console.log(data);
         res.status(201).send(data);
     });
     //res.send({data})
-
+        
+    } catch (error) {
+        res.status(500).json({error: "The User wasn't created"})
+    }
 };
 
 //Update

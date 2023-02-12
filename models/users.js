@@ -6,14 +6,14 @@ const UserSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId
     },
     firstName: {
-        type: String
+        type: String,
+        required: true,
     },
     lastName: {
         type: String
     },
     email: {
         type: String
-        ///unique: true
     },
     birthday: {
         type: Date

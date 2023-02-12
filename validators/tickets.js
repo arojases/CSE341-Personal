@@ -1,14 +1,11 @@
 const validator = require('../utils/validate');
 
-const saveContact = (req, res, next) => {
+const saveTicket = (req, res, next) => {
   const validationRule = {
-    firstName: 'required|string',
-    lastName: 'required|string',
-    email: 'required|email',
-    birthday: 'string',
-    password: 'required|string',
-    phone: 'string',
-    address: 'string'
+    origin: 'required|string',
+    destination: 'required|string',
+    departure: 'required|string',
+    return: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -24,5 +21,5 @@ const saveContact = (req, res, next) => {
 };
 
 module.exports = {
-  saveContact
+    saveTicket
 };

@@ -1,12 +1,13 @@
 const express = require("express")
 const router = express.Router()
+const validation = require("../validators/tickets")
 const { getTicket, getTicketId, createTicket, updateTicket, deleteTicket } = require("../controllers/tickets")
 
 //TODO https://localhost/user CRUD
 
 router.get("/", getTicket);
 router.get("/:id", getTicketId);
-router.post("/", createTicket);
+router.post("/", validation.saveTicket, createTicket);
 router.put("/:id", updateTicket);
 router.delete("/:id", deleteTicket);
 

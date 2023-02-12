@@ -233,6 +233,65 @@
                     }
                 }
 
+            },
+            "put":{
+                "tags": ["Ticket"],
+                "description": "",
+                "parameters": [{
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "origin": {
+                                    "example": "any"
+                                },
+                                "destination": {
+                                    "example": "any"
+                                },
+                                "departure": {
+                                    "example": "any"
+                                },
+                                "return": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+
+            },
+            "delete":{
+                "tags": ["Ticket"],
+                "description": "",
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
             }
         }
     }

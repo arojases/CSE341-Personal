@@ -21,15 +21,19 @@ const getTicketId = async (req, res) => {
 //Insert 
 const createTicket = async (req, res) => {
 
-const { body } = req
-console.log(body)
+    try {
+        const { body } = req
+        console.log(body)
 
-const data = await ticketmodel.create(body).then((data) => {
-    console.log(data);
-    res.status(201).send(data);
-});
-//res.send({data})
-
+        const data = await ticketmodel.create(body).then((data) => {
+        console.log(data);
+        res.status(201).send(data);
+        });
+        //res.send({data})
+        
+    } catch (error) {
+        res.status(500).json({error: "The Ticket wasn't created"})
+    }
 };
 
 //Update

@@ -3,7 +3,7 @@
 GET http://localhost:8080/users HTTP/1.1
 
 ###ID
-GET http://localhost:8080/users/63e483747575c19c5fa0108d HTTP/1.1
+GET http://localhost:8080/users/63e859428fc38a8cf0e9c686 HTTP/1.1
 ###
 GET http://localhost:8080/users/63e483ab7575c19c5fa01091 HTTP/1.1
 
@@ -12,17 +12,17 @@ POST http://localhost:8080/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "", 
+    "firstName": "Ariel", 
     "lastName": "Rojas", 
-    "email": "test@test.com", 
+    "email": "test3@test.com", 
     "birthday": "10/20/1990",
     "password": "admin",
-    "phone": 351876,
+    "phone": "351876",
     "address": "205 N 500 W"
 }
 
 ###Post
-PUT http://localhost:8080/users/63e483ab7575c19c5fa01091 HTTP/1.1
+PUT http://localhost:8080/users/63e859428fc38a8cf0e9c686 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE http://localhost:8080/users/63e483ab7575c19c5fa01091 HTTP/1.1
+DELETE http://localhost:8080/users/63e859428fc38a8cf0e9c686 HTTP/1.1
 
 //////////////////////////////RENDER USER////////////////////////////////
 
@@ -95,7 +95,7 @@ Content-Type: application/json
 }
 
 ###DELETE
-DELETE http://localhost:8080/tickets/63df3acb037f741e4ece5732
+DELETE http://localhost:8080/tickets/63e862b507ce76c9f0ee1e47
 
 //////////////////////////////RENDER TICKETS////////////////////////////////
 
