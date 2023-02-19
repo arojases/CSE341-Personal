@@ -20,10 +20,12 @@
   },
   "homepage": "https://github.com/arojases/CSE341-Personal#readme",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-validator": "^6.14.3",
+    "googleapis": "^105.0.0",
     "mongoose": "^6.9.0",
     "swagger-autogen": "^2.23.0",
     "swagger-jsdoc": "^6.2.8",
